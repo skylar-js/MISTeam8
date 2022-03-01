@@ -38,6 +38,8 @@ namespace MISTeam8.Models
 
 
         // test thom luce
-        //thom is a massive bitch and likes feet
+        // thom is a massive bitch and likes feet
+        // my balls are super blue like bleu cheese
+        //gabe likes blue balls
     }
 }
