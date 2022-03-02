@@ -8,7 +8,7 @@ namespace MISTeam8.Models
 {
     public class User
     {
-        public Guid ID { get; set; }
+        public Guid UserID { get; set; }
         [Required]
         [Display(Name = "First Name")]
         public string firstname { get; set; }

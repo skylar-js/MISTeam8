@@ -14,5 +14,6 @@ namespace MISTeam8.DAL
 
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Recognition> Recognitions { get; set; }
     }
 }

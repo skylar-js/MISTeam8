@@ -11,7 +11,7 @@ namespace MISTeam8.Models
     {
         [Required]
         [Display(Name = "Recongizer" )]
-        public string RecongizerID { get; set; }
+        public string UserID { get; set; }
         [Required]
         [Display(Name ="Recongized")]
         public string RecongizedID { get; set; }
