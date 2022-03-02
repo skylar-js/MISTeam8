@@ -33,6 +33,6 @@ namespace MISTeam8.Models
         [Display(Name = "Position")]
         public string position { get; set; }
 
-        public ICollection<Recognition> Recognitions { get; set; }
+        public ICollection<Recognition> Recognition { get; set; }
     }
 }
