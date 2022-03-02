@@ -32,14 +32,5 @@ namespace MISTeam8.Models
         [Required]
         [Display(Name = "Position")]
         public string position { get; set; }
-
-
-
-
-
-        // test thom luce
-        // thom is a massive bitch and likes feet
-        // my balls are super blue like bleu cheese
-        //hi
     }
 }
