@@ -16,6 +16,7 @@ namespace MISTeam8.Controllers
         private Team8Context db = new Team8Context();
 
         // GET: Users
+        [Authorize]
         
         public ActionResult Index()
         {
@@ -23,6 +24,8 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Users/Details/5
+        [Authorize]
+
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -38,6 +41,7 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Users/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -52,7 +56,7 @@ namespace MISTeam8.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.ID = Guid.NewGuid();
+                user.UserID = Guid.NewGuid();
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
