@@ -32,5 +32,7 @@ namespace MISTeam8.Models
         [Required]
         [Display(Name = "Position")]
         public string position { get; set; }
+
+        public ICollection<Recognition> Recognitions { get; set; }
     }
 }
