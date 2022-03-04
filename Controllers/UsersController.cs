@@ -56,7 +56,7 @@ namespace MISTeam8.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.UserID = Guid.NewGuid();
+                user.ID = Guid.NewGuid();
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
