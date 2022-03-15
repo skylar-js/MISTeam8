@@ -40,6 +40,7 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Recognitions/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
