@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using MISTeam8.DAL;
 using MISTeam8.Models;
 
+
+//test
+
 namespace MISTeam8.Controllers
 {
     public class RecognitionsController : Controller
