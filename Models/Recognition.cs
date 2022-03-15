@@ -12,7 +12,7 @@ namespace MISTeam8.Models
         [Required]
         public int RecognitionID { get; set; }
 
-        public Guid ID { get; set; }
+        public Guid UserID { get; set; }
         public string CoreValue { get; set; }
         public DateTime DateRecongized { get; set; }
         public string Details { get; set; }
