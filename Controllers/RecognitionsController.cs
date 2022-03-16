@@ -41,7 +41,7 @@ namespace MISTeam8.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname");
+            ViewBag.ID = new SelectList(db.Users, "ID", "fullname");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace MISTeam8.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 
@@ -75,7 +75,7 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 
@@ -92,7 +92,7 @@ namespace MISTeam8.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 

@@ -24,10 +24,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CoreValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.award, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CoreValue, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CoreValue, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.award, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.award, "", new { @class = "text-danger" })
             </div>
         </div>
 
