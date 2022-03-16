@@ -4,30 +4,27 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Recognized Employees</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Recognize Someone", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Users.firstname)
+          Recepient Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.award)
+          Award
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.recognizor)
+          Recognizor
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.recognized)
+          Date Recognized
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateRecongized)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Details)
+          Details of Recognition
         </th>
         <th></th>
     </tr>
@@ -35,16 +32,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Users.firstname)
+            @Html.DisplayFor(modelItem => item.Users.fullname)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.award)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.recognizor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recognized)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateRecongized)

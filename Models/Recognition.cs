@@ -12,11 +12,17 @@ namespace MISTeam8.Models
         [Required]
         public int RecognitionID { get; set; }
 
+        [Display (Name = "Recepient Name")]
         public Guid UserID { get; set; }
+        [Display(Name = "Award")]
         public CoreValue award { get; set; }
+        [Display(Name = "Recognizor")]
         public Guid recognizor { get; set; }
+        
         public Guid recognized { get; set; }
+        [Display(Name = "Date Recognized")]
         public DateTime DateRecongized { get; set; }
+        [Display(Name = "Details of Recognition")]
         public string Details { get; set; }
 
         public virtual User Users { get; set; }
