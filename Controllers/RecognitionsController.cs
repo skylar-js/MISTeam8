@@ -9,9 +9,6 @@ using System.Web.Mvc;
 using MISTeam8.DAL;
 using MISTeam8.Models;
 
-
-//test
-
 namespace MISTeam8.Controllers
 {
     public class RecognitionsController : Controller
@@ -21,7 +18,8 @@ namespace MISTeam8.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            return View(db.Recognitions.ToList());
+            var recognitions = db.Recognitions.Include(r => r.Users);
+            return View(recognitions.ToList());
         }
 
         // GET: Recognitions/Details/5
@@ -40,9 +38,9 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Recognitions/Create
-        [Authorize]
         public ActionResult Create()
         {
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname");
             return View();
         }
 
@@ -60,6 +58,7 @@ namespace MISTeam8.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 
@@ -75,6 +74,7 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 
@@ -91,6 +91,7 @@ namespace MISTeam8.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 
