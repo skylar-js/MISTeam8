@@ -4,15 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Give Someone Recognition!</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Click Here to Recognize Someone", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserID)
+            @Html.DisplayNameFor(model => model.Users.firstname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CoreValue)
@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserID)
+            @Html.DisplayFor(modelItem => item.Users.firstname)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CoreValue)
