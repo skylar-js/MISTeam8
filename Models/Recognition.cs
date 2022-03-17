@@ -31,8 +31,10 @@ namespace MISTeam8.Models
             Excellence = 1,
             Integrity = 2,
             Stewardship = 3,
-            Innovate = 4,
-            Balance = 5
+            Culture = 4,
+            Ignite = 5,
+            Innovate = 6,
+            Balance = 7
         }
         
 
