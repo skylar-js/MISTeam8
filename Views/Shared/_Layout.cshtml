@@ -20,8 +20,7 @@
                 @Html.ActionLink("Centric Associate Recognition", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>            
+                <ul class="nav navbar-nav">           
                     <li>@Html.ActionLink("Recognition", "Index", "Recognitions")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -32,8 +31,31 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Centric's Associate Recongintion Application</p>
-        </footer>
+            <div id="Social_Media" class="container-fluid text-center  bg-grey">
+                <h2>Follow Us</h2>
+                <br>
+                <div class="row slideanim slide">
+                    <div class="col-sm-4">
+                        <a href="https://www.facebook.com/CentricConsultingNational" class="btn btn-default btn-block" style="color:purple" role="button">Facebook</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://twitter.com/centric" class="btn btn-default btn-block" style="color:purple" role="button">Twitter</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://www.instagram.com/accounts/login/?next=/centricconsulting/" class="btn btn-default btn-block"  style="color:purple" role="button">Instagram</a>
+                    </div>
+                    <br><br>
+                    <div class="row slideanim slide">
+                        <div class="col-sm-6">
+                            <a href="https://www.linkedin.com/company/centric-consulting/" class="btn btn-default btn-block" style="color:purple" role="button">LinkedIn</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="https://www.youtube.com/channel/UCFmtoIKH1ijwpGpiJBxl4dw" class="btn btn-default btn-block" style="color:purple" role="button">YouTube</a>
+                        </div>
+                    </div>
+
+                    <p>&copy; @DateTime.Now.Year - Centric's Associate Recongintion Application <p><a href="https://centricconsulting.com/contact/" class="btn btn-toolbar btn-lg" style="color:purple">Contact Us &raquo;</a></p></p>
+</footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
