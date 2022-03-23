@@ -20,8 +20,9 @@
                 @Html.ActionLink("Centric Associate Recognition", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">           
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Recognition", "Index", "Recognitions")</li>
+                    <li>@Html.ActionLink("User", "Index", "Users")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
