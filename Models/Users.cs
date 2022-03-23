@@ -35,5 +35,6 @@ namespace MISTeam8.Models
 
         public ICollection<Recognition> Recognition { get; set; }
     }
+
+    // Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 }
-// Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
