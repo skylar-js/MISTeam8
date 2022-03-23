@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MISTeam8.DAL;
 using MISTeam8.Models;
 
@@ -54,6 +55,9 @@ namespace MISTeam8.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid memberId;
+                Guid.TryParse(User.Identity.GetUserId(), out memberId);
+                recognition.recognizorID = memberId;
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
                 return RedirectToAction("Index");
