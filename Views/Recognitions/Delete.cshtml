@@ -12,6 +12,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Recognizor.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recognizor.firstname)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Users.firstname)
         </dt>
 
@@ -25,22 +33,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.award)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.recognizor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.recognizor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.recognized)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.recognized)
         </dd>
 
         <dt>

@@ -18,7 +18,7 @@ namespace MISTeam8.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            var recognitions = db.Recognitions.Include(r => r.Users);
+            var recognitions = db.Recognitions.Include(r => r.Recognizor).Include(r => r.Users);
             return View(recognitions.ToList());
         }
 
@@ -38,10 +38,10 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Recognitions/Create
-        [Authorize]
         public ActionResult Create()
         {
-            ViewBag.ID = new SelectList(db.Users, "ID", "fullname");
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname");
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname");
             return View();
         }
 
@@ -50,7 +50,7 @@ namespace MISTeam8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RecognitionID,UserID,award,recognizor,recognized,DateRecongized,Details")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "RecognitionID,UserID,award,recognizorID,DateRecongized,Details")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,8 @@ namespace MISTeam8.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 
@@ -75,7 +76,8 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 
@@ -84,7 +86,7 @@ namespace MISTeam8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RecognitionID,UserID,award,recognizor,recognized,DateRecongized,Details")] Recognition recognition)
+        public ActionResult Edit([Bind(Include = "RecognitionID,UserID,award,recognizorID,DateRecongized,Details")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +94,8 @@ namespace MISTeam8.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
             return View(recognition);
         }
 

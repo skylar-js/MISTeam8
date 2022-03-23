@@ -62,7 +62,9 @@ namespace MISTeam8.Controllers
                 user.ID = memberId;
                 user.email = User.Identity.Name;
                 user.tenure = DateTime.Now;
-                
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             return View(user);
