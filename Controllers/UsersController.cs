@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MISTeam8.DAL;
 using MISTeam8.Models;
 
@@ -56,10 +57,12 @@ namespace MISTeam8.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.ID = Guid.NewGuid();
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Guid memberId;
+                Guid.TryParse(User.Identity.GetUserId(), out memberId);
+                user.ID = memberId;
+                user.email = User.Identity.Name;
+                user.tenure = DateTime.Now;
+                
             }
 
             return View(user);
