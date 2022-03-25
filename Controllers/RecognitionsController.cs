@@ -41,8 +41,8 @@ namespace MISTeam8.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname");
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname");
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname");
+            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname");
             return View();
         }
 
@@ -63,8 +63,8 @@ namespace MISTeam8.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 
@@ -80,8 +80,8 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 
@@ -98,8 +98,8 @@ namespace MISTeam8.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "firstname", recognition.recognizorID);
-            ViewBag.UserID = new SelectList(db.Users, "ID", "firstname", recognition.UserID);
+            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
+            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
             return View(recognition);
         }
 

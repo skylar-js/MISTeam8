@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Users</h2>
+<h2>Users <span class="glyphicon glyphicon-user" span> </span></h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.firstname)
+            First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastname)
+            Last Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            Email <span class="glyphicon glyphicon-envelope" span> </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tenure)
+            Hire Date <span class="glyphicon glyphicon-calendar" span> </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.position)
+            Position <span class="glyphicon glyphicon-briefcase" span> </span>
         </th>
         <th></th>
     </tr>
