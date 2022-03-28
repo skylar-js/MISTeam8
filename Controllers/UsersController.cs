@@ -82,7 +82,17 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            Guid memberId;
+            Guid.TryParse(User.Identity.GetUserId(), out memberId);
+            if (id == memberId)
+            {
+                return View(user);
+            }
+            else
+            {
+                return View("NotAuthorized");
+            }
+            
         }
 
         // POST: Users/Edit/5
@@ -113,7 +123,17 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            Guid memberId;
+            Guid.TryParse(User.Identity.GetUserId(), out memberId);
+            if (id == memberId)
+            {
+                return View(user);
+            }
+            else
+            {
+                return View("NotAuthorized");
+            }
+           
         }
 
         // POST: Users/Delete/5
