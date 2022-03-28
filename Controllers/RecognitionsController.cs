@@ -76,13 +76,20 @@ namespace MISTeam8.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Recognition recognition = db.Recognitions.Find(id);
-            if (recognition == null)
+            Guid memberId;
+            Guid.TryParse(User.Identity.GetUserId(), out memberId);
+            if (recognition.recognizorID == memberId)
             {
-                return HttpNotFound();
+                return View(recognition);
             }
+            else
+            {
+                return View("NotAuthorized");
+            }
+
             ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
             ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
-            return View(recognition);
+            
         }
 
         // POST: Recognitions/Edit/5
@@ -115,7 +122,17 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
-            return View(recognition);
+            Guid memberId;
+            Guid.TryParse(User.Identity.GetUserId(), out memberId);
+            if (recognition.recognizorID == memberId)
+            {
+                return View(recognition);
+            }
+            else
+            {
+                return View("NotAuthorized");
+            }
+            
         }
 
         // POST: Recognitions/Delete/5
