@@ -39,6 +39,7 @@ namespace MISTeam8.Controllers
         }
 
         // GET: Recognitions/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname");
