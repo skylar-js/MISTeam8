@@ -19,9 +19,15 @@ namespace MISTeam8.Controllers
         // GET: Users
         [Authorize]
         
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Users.ToList());
+            var Users = from r in db.Users select r;
+            Users = db.Users.OrderBy(r => r.lastname).ThenBy(r => r.firstname); ;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Users = Users.Where(r => r.lastname.Contains(searchString) || r.firstname.Contains(searchString)); 
+            }   
+            return View(Users);
         }
 
         // GET: Users/Details/5
