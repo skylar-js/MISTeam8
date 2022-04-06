@@ -16,11 +16,13 @@ namespace MISTeam8.Controllers
     {
         private Team8Context db = new Team8Context();
 
+
         // GET: Recognitions
         public ActionResult Index()
         {
             var recognitions = db.Recognitions.Include(r => r.Recognizor).Include(r => r.Users);
             return View(recognitions.ToList());
+
         }
 
         // GET: Recognitions/Details/5
@@ -62,6 +64,7 @@ namespace MISTeam8.Controllers
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
 
             ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);

@@ -5,6 +5,21 @@
 }
 
 <h2>Centric Always Recognizes Employees' Hardwork <span class="glyphicon glyphicon-searc" span> </span> </h2>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="colmd-9">
+            @using (Html.BeginForm("Index", "Users", FormMethod.Get))
+            {
+                <p>
+                    Search For Employee  <span class="glyphicon glyphicon-search" span> </span>
+                    @Html.TextBox("searchString")
+                    <input type="submit" value="Seach" class="btn btn-primary btn-xs" />
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
 
 <p>
     @Html.ActionLink("Click Here To Recognize Your Fellow Coworkers For All Their Hardwork", "Create")
@@ -29,29 +44,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Recognizor.fullname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Users.fullname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.award)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateRecongized)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecognitionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RecognitionID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecognitionID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recognizor.fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.award)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRecongized)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RecognitionID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RecognitionID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RecognitionID })
+            </td>
+        </tr>
+    }
 
 </table>
