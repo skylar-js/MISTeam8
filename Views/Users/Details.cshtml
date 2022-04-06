@@ -69,7 +69,20 @@
 
     <h3>
 
-        <strong> Awards: </strong>
+        <strong> Awards: </strong> <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo"> ! </button>
+        <div id="demo" class="collapse">
+            <ul>
+                <li> <span class="glyphicon glyphicon-thumbs-up" style="color:lawngreen" span>  Your First Award </li>
+                <li> <span class="glyphicon glyphicon-stats" style="color:gold" span>  Commit to Delivery Excellence Badge  </li>
+                <li> <span class="glyphicon glyphicon-heart" style="color:darkred" span>  Embrace Integrity and Openness Badge  </li>
+                <li> <span class="glyphicon glyphicon-usd" style="color:darkgreen" span>  Practice Responsible Stewardship Badge  </li>
+                <li> <span class="glyphicon glyphicon-globe" style="color:skyblue" span> Invest in an Exceptional Culture Badge </li>
+                <li> <span class="glyphicon glyphicon-home" style="color: saddlebrown" span>  Ignite Passion for the Greater Good Badge </li>
+                <li> <span class="glyphicon glyphicon-wrench" style="color: dimgrey" span>  Strive to Innovate Badge </li>
+                <li> <span class="glyphicon glyphicon-scale" style="color:Navy" span>  Live a Balanced Life Badge  </li>
+
+            </ul>
+        </div>
         <br />
 
         @if (total >= 1)
@@ -121,13 +134,21 @@
         }
         <br />
         <br />
+        <strong> Accomplishments:</strong>         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2"> ! </button>
+        <div id="demo2" class="collapse">
+            <ul>
+                <li> <span class="glyphicon glyphicon-check" style="color: hotpink" span>  Acheive all 7 Recognitions </li>
+                <li> <span class="glyphicon glyphicon-fire" style="color:orangered" span> Get Recognized 5 times  </li>
+                <li> <span class="glyphicon glyphicon-star" style="color:goldenrod" span>  Get Recognized 10 times  </li>
 
-        <strong> Accomplishments:</strong>
+            </ul>
+        </div>
+
         <br />
 
         @if (innovate >= 1 && stewardship >= 1 && integrity >= 1 && integrity >= 1 && excellence >= 1 && balance >= 1 && culture > 1)
         {
-            <span> Well Rounded </span> <span class="glyphicon glyphicon-check" style="color:black" span> </span>
+            <span> Well Rounded </span> <span class="glyphicon glyphicon-check" style="color: hotpink" span> </span>
         }
 
         <br />
