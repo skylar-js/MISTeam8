@@ -44,8 +44,11 @@ namespace MISTeam8.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname");
-            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname");
+            // ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname");
+            string UserID = User.Identity.GetUserId();
+            SelectList users = new SelectList(db.Users, "ID", "fullname");
+            users = new SelectList(users.Where(x => x.Value != UserID).ToList(), "Value", "Text");
+            ViewBag.UserID = users;
             return View();
         }
 
