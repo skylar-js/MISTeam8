@@ -47,6 +47,25 @@ namespace MISTeam8.Controllers
             var rec = db.Recognitions.Where(r => r.UserID == id);
             var totalCnt = rec.Count(); //counts all the recognitions for that person
             ViewBag.totalrec = totalCnt;
+            var rec1Cnt = rec.Where(r => r.award == Recognition.CoreValue.Excellence).Count();
+            ViewBag.excellence = rec1Cnt;
+            var rec2Cnt = rec.Where(r => r.award == Recognition.CoreValue.Integrity).Count();
+            ViewBag.integrity = rec2Cnt;
+            var rec3Cnt = rec.Where(r => r.award == Recognition.CoreValue.Stewardship).Count();
+            ViewBag.stewardship = rec3Cnt;
+            var rec4Cnt = rec.Where(r => r.award == Recognition.CoreValue.Culture).Count();
+            ViewBag.culture = rec4Cnt;
+            var rec5Cnt = rec.Where(r => r.award == Recognition.CoreValue.Ignite).Count();
+            ViewBag.ignite = rec5Cnt;
+            var rec6Cnt = rec.Where(r => r.award == Recognition.CoreValue.Innovate).Count();
+            ViewBag.innovate = rec6Cnt;
+            var rec7Cnt = rec.Where(r => r.award == Recognition.CoreValue.Balance).Count();
+            ViewBag.balance = rec7Cnt;
+
+
+
+
+
             return View(user);
         }
 

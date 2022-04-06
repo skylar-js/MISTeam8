@@ -55,26 +55,116 @@
 @{
 
     var total = ViewBag.totalrec;
-    <h2>
+    var excellence = ViewBag.Excellence;
+    var integrity = ViewBag.Integrity;
+    var stewardship = ViewBag.Stewardship;
+    var culture = ViewBag.Culture;
+    var ignite = ViewBag.Ignite;
+    var innovate = ViewBag.Innovate;
+    var balance = ViewBag.Balance;
+
+
+
+
+
+    <h3>
+
         <strong> Awards: </strong>
+        <br />
 
         @if (total >= 1)
         {
             <span> Welcome to Centric </span> <span class="glyphicon glyphicon-thumbs-up" style="color:lawngreen" span> </span>
         }
+
+        <br />
+        @if (excellence >= 1)
+        {
+            <span> Getting the Job Done (right) </span> <span class="glyphicon glyphicon-stats" style="color:gold" span> </span>
+
+        }
+        <br />
+        @if (integrity >= 1)
+        {
+            <span> Got the Basics </span> <span class="glyphicon glyphicon-heart" style="color:darkred" span> </span>
+
+        }
+        <br />
+        @if (stewardship >= 1)
+        {
+            <span> Can Be Trusted With A lot </span> <span class="glyphicon glyphicon-usd" style="color:darkgreen" span> </span>
+
+        }
+        <br />
+        @if (culture >= 1)
+        {
+            <span> Sum of the Parts </span> <span class="glyphicon glyphicon-globe" style="color:skyblue" span> </span>
+
+        }
+        <br />
+        @if (ignite >= 1)
+        {
+            <span> Takes a Community </span> <span class="glyphicon glyphicon-home" style="color:saddlebrown" span> </span>
+
+        }
+        <br />
+        @if (innovate >= 1)
+        {
+            <span> Mad Scientist </span> <span class="glyphicon glyphicon-wrench" style="color:dimgrey" span> </span>
+
+        }
+        <br />
+        @if (balance >= 1)
+        {
+            <span> Too Much Work... </span> <span class="glyphicon glyphicon-scale" style="color:navy" span> </span>
+
+        }
+        <br />
+        <br />
+
+        <strong> Accomplishments:</strong>
+        <br />
+
+        @if (innovate >= 1 && stewardship >= 1 && integrity >= 1 && integrity >= 1 && excellence >= 1 && balance >= 1 && culture > 1)
+        {
+            <span> Well Rounded </span> <span class="glyphicon glyphicon-check" style="color:black" span> </span>
+        }
+
+        <br />
         @if (total >= 5)
         {
-            <span> 5 Award Streak </span> <span class="glyphicon glyphicon-thumbs-up" style="color:lawngreen" span> </span>
+            <span> 5 Award Streak </span> <span class="glyphicon glyphicon-fire" style="color:orangered" span> </span>
         }
+        <br />
         @if (total >= 10)
         {
             <span> Centric's Best </span> <span class="glyphicon glyphicon-star" style="color:gold" span> </span>
         }
+
+
+
+    </h3>
+    <br />
+    <h2>
+        Total Recognitions = @total
+        <br />
+        Excellence: @excellence
+        <br />
+        Integrity: @integrity
+        <br />
+        Stewardship: @stewardship
+        <br />
+        Culture: @culture
+        <br />
+        Ignite: @ignite
+        <br />
+        Innovate: @innovate
+        <br />
+        Balance: @balance
     </h2>
-    <h1> Total Recognitions = @total </h1>
 }
 
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
