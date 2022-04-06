@@ -44,6 +44,9 @@ namespace MISTeam8.Controllers
             {
                 return HttpNotFound();
             }
+            var rec = db.Recognitions.Where(r => r.UserID == id);
+            var totalCnt = rec.Count(); //counts all the recognitions for that person
+            ViewBag.totalrec = totalCnt;
             return View(user);
         }
 

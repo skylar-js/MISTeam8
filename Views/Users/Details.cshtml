@@ -52,7 +52,29 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@{
+
+    var total = ViewBag.totalrec;
+    <h2>
+        <strong> Awards: </strong>
+
+        @if (total >= 1)
+        {
+            <span> Welcome to Centric </span> <span class="glyphicon glyphicon-thumbs-up" style="color:lawngreen" span> </span>
+        }
+        @if (total >= 5)
+        {
+            <span> 5 Award Streak </span> <span class="glyphicon glyphicon-thumbs-up" style="color:lawngreen" span> </span>
+        }
+        @if (total >= 10)
+        {
+            <span> Centric's Best </span> <span class="glyphicon glyphicon-star" style="color:gold" span> </span>
+        }
+    </h2>
+    <h1> Total Recognitions = @total </h1>
+}
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
