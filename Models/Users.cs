@@ -25,9 +25,11 @@ namespace MISTeam8.Models
 
         }
         [Required]
+        [EmailAddress]
         [Display(Name = "Email")]
         public string email { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         [Display(Name = "Date Hired")]
         public DateTime tenure { get; set; }
         [Required]

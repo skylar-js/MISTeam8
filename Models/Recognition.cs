@@ -20,9 +20,13 @@ namespace MISTeam8.Models
         public Guid recognizorID { get; set; }
         
        // public Guid recognized { get; set; }
+       [Required]
         [Display(Name = "Date Recognized")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
+
         public DateTime DateRecongized { get; set; }
         [Display(Name = "Details of Recognition")]
+        [Required]
         public string Details { get; set; }
         [ForeignKey("UserID")]
         public virtual User Users { get; set; }
