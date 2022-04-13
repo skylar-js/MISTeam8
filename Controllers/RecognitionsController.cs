@@ -87,6 +87,8 @@ namespace MISTeam8.Controllers
             Guid.TryParse(User.Identity.GetUserId(), out memberId);
             if (recognition.recognizorID == memberId)
             {
+                ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
+                ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
                 return View(recognition);
             }
             else
@@ -94,8 +96,7 @@ namespace MISTeam8.Controllers
                 return View("NotAuthorized");
             }
 
-            ViewBag.recognizorID = new SelectList(db.Users, "ID", "fullname", recognition.recognizorID);
-            ViewBag.UserID = new SelectList(db.Users, "ID", "fullname", recognition.UserID);
+            
             
         }
 
