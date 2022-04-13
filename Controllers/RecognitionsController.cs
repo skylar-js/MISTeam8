@@ -16,7 +16,7 @@ namespace MISTeam8.Controllers
     {
         private Team8Context db = new Team8Context();
 
-
+        [Authorize]
         // GET: Recognitions
         public ActionResult Index()
         {
